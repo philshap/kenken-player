@@ -25,5 +25,9 @@ class GameTest: XCTestCase {
     func testGame() {
         var game = Game.createTestGame();
         game.display();
+        XCTAssert(!game.isGameComplete());
+        game.applyConstraints();
+        game.display();
+        XCTAssert(game.isGameComplete());
     }
 }

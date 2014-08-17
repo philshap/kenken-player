@@ -24,45 +24,45 @@ class SetTest: XCTestCase {
 
     func testContains() {
         var set = Set<Int>();
-        assert(!set.contains(10));
+        XCTAssert(!set.contains(10));
     }
     
     func testInsert() {
         var set = Set<Int>();
         set.insert(10);
-        assert(set.contains(10));
+        XCTAssert(set.contains(10));
         set.insert(100);
-        assert(set.contains(100));
+        XCTAssert(set.contains(100));
     }
     
     func testRemove() {
         var set = Set<Int>();
         set.insert(10);
         set.remove(10);
-        assert(!set.contains(10));
+        XCTAssert(!set.contains(10));
     }
     
     func testSize() {
         var set = Set<Int>();
-        assert(set.size() == 0);
+        XCTAssertEqual(set.size(), 0);
         set.insert(10);
-        assert(set.size() == 1);
+        XCTAssertEqual(set.size(), 1);
         set.insert(10);
-        assert(set.size() == 1);
+        XCTAssertEqual(set.size(), 1);
         set.insert(11);
-        assert(set.size() == 2);
+        XCTAssertEqual(set.size(), 2);
         set.remove(10);
         set.remove(11);
-        assert(set.size() == 0);
+        XCTAssertEqual(set.size(), 0);
     }
     
     func testFirst() {
         var set = Set<Int>();
-        assert(set.first() == nil);
+        XCTAssertNil(set.first());
         set.insert(10);
-        assert(set.first() == 10);
+        XCTAssertEqual(set.first()!, 10);
         set.remove(10);
-        assert(set.first() == nil);
+        XCTAssertNil(set.first());
     }
     
     func testIntersect() {
@@ -78,10 +78,10 @@ class SetTest: XCTestCase {
         
         set1.intersect(set2);
         
-        assert(!set1.contains(1));
-        assert(set1.contains(2));
-        assert(set1.contains(3));
-        assert(!set1.contains(4));
+        XCTAssert(!set1.contains(1));
+        XCTAssert(set1.contains(2));
+        XCTAssert(set1.contains(3));
+        XCTAssert(!set1.contains(4));
     }
     
     func testGenerate() {
@@ -93,8 +93,8 @@ class SetTest: XCTestCase {
         for value in set {
             dictionary[value] = true;
         }
-        assert(dictionary[1] == true);
-        assert(dictionary[2] == true);
-        assert(dictionary[3] == true);
+        XCTAssert(dictionary[1]!);
+        XCTAssert(dictionary[2]!);
+        XCTAssert(dictionary[3]!);
     }
 }

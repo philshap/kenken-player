@@ -20,7 +20,7 @@ public enum Operator {
         }
     }
    
-    public func apply(arg1:Int, arg2:Int) -> Int? {
+    public func apply(arg1:Int, _ arg2:Int) -> Int? {
         switch self {
         case .Identity:
             return nil;
@@ -35,7 +35,7 @@ public enum Operator {
         }
     }
 
-    public func apply(arg1:Int, arg2:Int, arg3:Int) -> Int? {
+    public func apply(arg1:Int, _ arg2:Int, _ arg3:Int) -> Int? {
         switch self {
         case .Identity, .Minus, .Divide:
             return nil;

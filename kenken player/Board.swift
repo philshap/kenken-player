@@ -11,9 +11,10 @@ import Foundation
 // A Board is a matrix of values. Each value can be fixed or variable.
 public class Board {
     var contents: Matrix<Value>;
+    // The size of the board accross one dimension. A board is a square area.
     public let size: Int;
 
-    public init(size:Int) {
+    public init(_ size:Int) {
         self.size = size;
         contents = Matrix<Value>(rows: size, columns: size, initializer: { Value(size: size); } )
     }

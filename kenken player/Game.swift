@@ -15,20 +15,27 @@ public struct Game {
     var constraints: [Constraint];
     
     public init(size: Int, constraints:[Constraint]) {
-        board = Board(size: size);
+        board = Board(size);
         self.constraints = constraints;
+    }
+    
+    public static func createTestGame() -> Game {
+        return Game(size: 2, constraints: [
+            Constraint(Operator.Identity, 1, [ Position(column: 0, row: 0) ]),
+            Constraint(Operator.Identity, 2, [ Position(column: 0, row: 1) ]),
+            Constraint(Operator.Identity, 2, [ Position(column: 1, row: 0) ]),
+            Constraint(Operator.Identity, 1, [ Position(column: 1, row: 1) ]),
+        ]);
+    }
+    
+    public func applyConstraints() {
         for constraint in constraints {
             constraint.constrain(board);
         }
     }
     
-    public static func createTestGame() -> Game {
-        return Game(size: 2, constraints: [
-            Constraint(op: Operator.Identity, goal: 1, positions: [ Position(column: 0, row: 0) ]),
-            Constraint(op: Operator.Identity, goal: 2, positions: [ Position(column: 0, row: 1) ]),
-            Constraint(op: Operator.Identity, goal: 2, positions: [ Position(column: 1, row: 0) ]),
-            Constraint(op: Operator.Identity, goal: 1, positions: [ Position(column: 1, row: 1) ]),
-        ]);
+    public func isGameComplete() -> Bool {
+        return board.solved();
     }
     
     public func display() {

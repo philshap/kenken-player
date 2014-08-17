@@ -24,31 +24,31 @@ class ValueTest: XCTestCase {
     
     func testIsFixed() {
         var value = Value(size: 2);
-        assert(!value.isFixed());
+        XCTAssert(!value.isFixed());
         var value2 = Value(size: 1);
-        assert(value2.isFixed());
+        XCTAssert(value2.isFixed());
     }
     
     func testGetValue() {
         var value = Value(size: 2);
-        assert(value.getValue() == nil);
+        XCTAssertNil(value.getValue());
         var value2 = Value(size: 1);
-        assert(value2.getValue() == 1);
+        XCTAssertEqual(value2.getValue()!, 1);
     }
     
     func testContainsValue() {
         var value = Value(size: 10);
-        assert(value.containsValue(1));
-        assert(value.containsValue(5));
-        assert(value.containsValue(10));
-        assert(!value.containsValue(0));
-        assert(!value.containsValue(11));
+        XCTAssert(value.containsValue(1));
+        XCTAssert(value.containsValue(5));
+        XCTAssert(value.containsValue(10));
+        XCTAssert(!value.containsValue(0));
+        XCTAssert(!value.containsValue(11));
     }
     
     func testRemoveValue() {
         var value = Value(size: 4);
-        assert(value.containsValue(1));
+        XCTAssert(value.containsValue(1));
         value.removeValue(1);
-        assert(!value.containsValue(1));
+        XCTAssert(!value.containsValue(1));
     }
 }

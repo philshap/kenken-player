@@ -1,0 +1,45 @@
+//
+//  OperatorTest.swift
+//  kenken player
+//
+//  Created by Phil Shapiro on 8/17/14.
+//  Copyright (c) 2014 Phil Shapiro. All rights reserved.
+//
+
+import Cocoa
+import XCTest
+import kenken_player;
+
+class OperatorTest: XCTestCase {
+
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+    
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+    
+    func apply1Test() {
+        XCTAssertEqual(Operator.Identity.apply(100)!, 100);
+        XCTAssertNil(Operator.Plus.apply(100));
+    }
+    
+    func apply2Test() {
+        XCTAssertNil(Operator.Identity.apply(4, 2));
+        XCTAssertEqual(Operator.Plus.apply(4, 2)!, 6);
+        XCTAssertEqual(Operator.Minus.apply(4, 2)!, 2);
+        XCTAssertEqual(Operator.Multiply.apply(4, 2)!, 8);
+        XCTAssertEqual(Operator.Divide.apply(4, 2)!, 2);
+    }
+    
+    func apply3Test() {
+        XCTAssertNil(Operator.Identity.apply(1, 2, 3));
+        XCTAssertEqual(Operator.Plus.apply(1, 2, 3)!, 6);
+        XCTAssertNil(Operator.Minus.apply(1, 2, 3));
+        XCTAssertEqual(Operator.Multiply.apply(1, 2, 3)!, 6);
+        XCTAssertNil(Operator.Divide.apply(1, 2, 3));
+    }
+}

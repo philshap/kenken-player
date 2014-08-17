@@ -10,7 +10,7 @@ import Foundation
 
 //  Basic Set type
 public struct Set<T: Hashable> : SequenceType {
-    var contents = Dictionary<T, Bool>();
+    var contents = [T: Bool]();
     
     public init() {
     }
@@ -41,7 +41,7 @@ public struct Set<T: Hashable> : SequenceType {
     public func generate() -> GeneratorOf<T> {
         var contentsGenerator = contents.generate();
         return GeneratorOf<T>({ () -> T? in
-            if let (key, value) = contentsGenerator.next() {
+            if let (key, _) = contentsGenerator.next() {
                 return key;
             }
             return nil;
@@ -50,7 +50,7 @@ public struct Set<T: Hashable> : SequenceType {
 
     public func display() {
         print("[");
-        for (value, _) in contents {
+        for value in self {
             print("\(value) ");
         }
         print("]");
@@ -58,7 +58,7 @@ public struct Set<T: Hashable> : SequenceType {
     
     // Modify this set to be an intersection of the current set's contents with the other set.
     public mutating func intersect(other:Set<T>) {
-        for (value, _) in contents {
+        for value in self {
             if !other.contains(value) {
                 remove(value);
             }
