@@ -47,6 +47,12 @@ public class Value : SequenceType {
         values.remove(value);
     }
     
+    public func removeValues(values:Set<Int>) {
+        for value in values {
+            removeValue(value);
+        }
+    }
+    
     public func addValue(value:Int) {
         values.insert(value);
     }

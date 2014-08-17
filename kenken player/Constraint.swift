@@ -15,7 +15,7 @@ import Foundation
 public class Constraint {
     let op:Operator;
     let goal:Int;
-    let positions:[Position];
+    public let positions:[Position];
     
     /**
      * Create a constraint, given an operator, goal and board positions.

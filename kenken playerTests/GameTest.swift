@@ -24,18 +24,19 @@ class GameTest: XCTestCase {
     
     func testGame() {
         var game = Game.createTestGame();
-        game.display();
         XCTAssert(!game.isGameComplete());
         game.applyConstraints();
-        game.display();
         XCTAssert(game.isGameComplete());
     }
     
     func testGameBig() {
         var game = Game.createTestGame2();
-        game.display();
         XCTAssert(!game.isGameComplete());
-        game.applyConstraints();
-        game.display();
+        for i in 0...10 {
+            game.applyConstraints();
+            game.display();
+            game.excludeConstrainedValues();
+            game.display();
+        }
     }
 }
