@@ -21,6 +21,12 @@ public struct Game {
         self.constraints = constraints;
     }
     
+    public func solve() {
+        applyConstraints();
+        excludeConstrainedValues();
+        board.excludeFixedCells();
+    }
+    
     public func applyConstraints() {
         for constraint in constraints {
             constraint.constrain(board);
@@ -78,7 +84,7 @@ public struct Game {
         }
     }
     
-    public func isGameComplete() -> Bool {
+    public func isComplete() -> Bool {
         return board.solved();
     }
     

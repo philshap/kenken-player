@@ -42,10 +42,14 @@ public class Value : SequenceType {
     public func containsValue(value:Int) -> Bool {
         return values.contains(value);
     }
+
+    public func removeValue(value:Int) {
+        values.remove(value);
+    }
     
-    public func removeValues(toRemove:Set<Int>) {
-        for value in toRemove {
-            values.remove(value);
+    public func removeValues(values:Set<Int>) {
+        for value in values {
+            removeValue(value);
         }
     }
     

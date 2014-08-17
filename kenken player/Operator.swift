@@ -10,6 +10,17 @@ import Foundation
 
 public enum Operator {
     case Identity, Plus, Minus, Multiply, Divide;
+    
+    public static func fromString(op:String) -> Operator {
+        switch op {
+        case "=": return Identity;
+        case "+": return Plus;
+        case "-": return Minus;
+        case "*": return Multiply;
+        case "/": return Divide;
+        default: return Identity;
+        }
+    }
    
     public func apply(arg1:Int) -> Int? {
         switch self {

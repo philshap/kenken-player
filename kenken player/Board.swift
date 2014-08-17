@@ -19,6 +19,29 @@ public class Board {
         contents = Matrix<Value>(rows: size, columns: size, initializer: { Value(size: size); } )
     }
     
+    public func excludeFixedAt(valueRow: Int, _ valueColumn: Int, _ value: Int) {
+        for row in 0..<size {
+            if row != valueRow {
+                contents[row, valueColumn].removeValue(value);
+            }
+        }
+        for column in 0..<size {
+            if column != valueColumn {
+                contents[valueRow, column].removeValue(value);
+            }
+        }
+    }
+    
+    public func excludeFixedCells() {
+        for i in 0..<size {
+            for j in 0..<size {
+                if let value = contents[i, j].getValue() {
+                    excludeFixedAt(i, j, value);
+                }
+            }
+        }
+    }
+    
     /** A board is solved if there are no unconstrained values left. */
     public func solved() -> Bool {
         for i in 0..<size {

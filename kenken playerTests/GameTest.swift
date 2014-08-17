@@ -32,38 +32,74 @@ class GameTest: XCTestCase {
             ]);
     }
     
-    // KenKen puzzle from NYTimes 08/17/14
+    func testGameTiny() {
+        var game = createTestGame();
+        XCTAssert(!game.isComplete());
+        game.solve();
+        XCTAssert(game.isComplete());
+    }
+    
+    // 5x5 KenKen puzzle from NYTimes 08/17/14
     func createTestGame2() -> Game {
         return Game(size: 5, constraints: [
-            Constraint(Operator.Plus, 3, [ Position(column: 0, row: 0), Position(column: 0, row: 1) ]),
-            Constraint(Operator.Identity, 2, [ Position(column: 1, row: 0) ]),
-            Constraint(Operator.Minus, 2, [ Position(column: 2, row: 0), Position(column: 2, row: 1) ]),
-            Constraint(Operator.Minus, 1, [ Position(column: 3, row: 0), Position(column: 4, row: 0) ]),
-            Constraint(Operator.Minus, 1, [ Position(column: 1, row: 1), Position(column: 1, row: 2) ]),
-            Constraint(Operator.Multiply, 50, [ Position(column: 3, row: 1), Position(column: 4, row: 1), Position(column: 2, row: 2) , Position(column: 3, row: 2) ]),
-            Constraint(Operator.Plus, 9, [ Position(column: 0, row: 2), Position(column: 0, row: 3) ]),
-            Constraint(Operator.Minus, 2, [ Position(column: 4, row: 2), Position(column: 4, row: 3) ]),
-            Constraint(Operator.Plus, 9, [ Position(column: 1, row: 3), Position(column: 0, row: 4), Position(column: 1, row: 4) ]),
-            Constraint(Operator.Minus, 3, [ Position(column: 2, row: 3), Position(column: 2, row: 4) ]),
-            Constraint(Operator.Identity, 2, [ Position(column: 4, row: 4) ]),
+            Constraint("+ 3 00 01"),
+            Constraint("= 2 10"),
+            Constraint("- 2 20 21"),
+            Constraint("- 1 30 40"),
+            Constraint("- 1 11 12"),
+            Constraint("* 50 31 41 22 32"),
+            Constraint("+ 9 02 03"),
+            Constraint("- 2 42 43"),
+            Constraint("+ 9 13 04 14"),
+            Constraint("- 3 23 24"),
+            Constraint("/ 2 33 34"),
+            Constraint("= 2 44")
             ]);
     }
     
-    func testGame() {
-        var game = createTestGame();
-        XCTAssert(!game.isGameComplete());
-        game.applyConstraints();
-        XCTAssert(game.isGameComplete());
+    func testGameMedium() {
+        var game = createTestGame2();
+        while !game.isComplete() {
+            game.solve();
+            game.display();
+        }
+    }
+    
+    // 7x7 KenKen puzzle from NYTimes 08/17/14
+    func createTestGame3() -> Game {
+        return Game(size: 7, constraints: [
+            Constraint("* 56 00 01 02"),
+            Constraint("/ 3 10 11"),
+            Constraint("- 1 20 21"),
+            Constraint("- 3 30 31"),
+            Constraint("- 1 40 41"),
+            Constraint("- 3 50 60"),
+            Constraint("= 6 51"),
+            Constraint("+ 18 61 52 62"),
+            Constraint("- 5 12 13"),
+            Constraint("- 3 22 32"),
+            Constraint("- 3 42"),
+            Constraint("= 6 03"),
+            Constraint("+ 7 23 33"),
+            Constraint("+ 13 43 53 63"),
+            Constraint("* 15 04 05 06"),
+            Constraint("+ 18 14 24 34"),
+            Constraint("- 3 44 54"),
+            Constraint("/ 2 64 65"),
+            Constraint("- 2 15 25"),
+            Constraint("- 5 35 36"),
+            Constraint("* 42 45 55 46"),
+            Constraint("- 2 16 26"),
+            Constraint("- 1 56 66")
+            ]);
     }
     
     func testGameBig() {
-        var game = createTestGame2();
-        XCTAssert(!game.isGameComplete());
-        for i in 0...10 {
-            game.applyConstraints();
-            game.display();
-            game.excludeConstrainedValues();
-            game.display();
-        }
+        // Solver not yet smart enough to handle this.
+//        var game = createTestGame3();
+//        while !game.isComplete() {
+//            game.solve();
+//            game.display();
+//        }
     }
 }

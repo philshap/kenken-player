@@ -48,6 +48,7 @@
 		4A0603B1199FF8F200029882 /* GameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTest.swift; sourceTree = "<group>"; };
 		4A101F9A19A0756300B0B2C5 /* OperatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTest.swift; sourceTree = "<group>"; };
 		4A101F9C19A076FB00B0B2C5 /* ConstraintTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintTest.swift; sourceTree = "<group>"; };
+		4A4C66A019A1558600835E12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A5D3BA7199F95C3006D6924 /* kenken player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kenken player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5D3BAB199F95C3006D6924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A5D3BAC199F95C3006D6924 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		4A5D3B9E199F95C3006D6924 = {
 			isa = PBXGroup;
 			children = (
+				4A4C66A019A1558600835E12 /* README.md */,
 				4A5D3BA9199F95C3006D6924 /* kenken player */,
 				4A5D3BC2199F95C3006D6924 /* kenken playerTests */,
 				4A5D3BA8199F95C3006D6924 /* Products */,

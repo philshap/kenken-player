@@ -26,6 +26,31 @@ public class Constraint {
         self.positions = positions;
     }
     
+    /**
+     * Helper method to make a constraint.
+     * Format is:
+     *
+     * O G PP PP PP ...
+     *
+     * O - operator
+     *
+     * G - goal number
+     *
+     * PP - position in row/column format
+     */
+    public init(_ string:String) {
+        let components = string.componentsSeparatedByString(" ");
+        self.op = Operator.fromString(components[0]);
+        self.goal = components[1].toInt()!;
+        var positions = [Position]();
+        for position in components[2..<components.count] {
+            let column = position[position.startIndex..<position.startIndex.successor()].toInt()!;
+            let row = position[position.startIndex.successor()..<position.endIndex].toInt()!;
+            positions.append(Position(column: column, row: row));
+        }
+        self.positions = positions;
+    }
+    
     /** Exclude identical values if they share the same row or column. */
     public func excludeValue(position1: Position, _ value1:Int, _ position2: Position, _ value2:Int) -> Bool {
         return (value1 == value2) && (position1.row == position2.row || position1.column == position2.column);
