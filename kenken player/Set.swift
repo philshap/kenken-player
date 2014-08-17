@@ -32,7 +32,7 @@ public struct Set<T: Hashable> : SequenceType {
     }
 
     public func first() -> T? {
-        for (key, value) in contents {
+        for (key, _) in contents {
             return key;
         }
         return nil;

@@ -24,7 +24,6 @@ class BoardTest: XCTestCase {
     
     func testBoard() {
         var board = Board(4);
-        board.display();
         XCTAssert(!board.solved());
     }
 }

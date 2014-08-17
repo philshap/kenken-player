@@ -34,9 +34,8 @@ public class Value : SequenceType {
     public func getValue() -> Int? {
         if isFixed() {
             return values.first();
-        } else {
-            return nil;
         }
+        return nil;
     }
     
     public func containsValue(value:Int) -> Bool {
