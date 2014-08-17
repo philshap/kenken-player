@@ -42,7 +42,11 @@ public enum Operator {
         case .Multiply:
             return arg1 * arg2;
         case .Divide:
-            return arg1 / arg2;
+            // Only support exact divides.
+            if arg1 % arg2 == 0 {
+                return arg1 / arg2;
+            }
+            return nil;
         }
     }
 
