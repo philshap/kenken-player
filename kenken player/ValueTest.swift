@@ -45,10 +45,12 @@ class ValueTest: XCTestCase {
         XCTAssert(!value.containsValue(11));
     }
     
-    func testRemoveValue() {
+    func testRemoveValues() {
         var value = Value(size: 4);
         XCTAssert(value.containsValue(1));
-        value.removeValue(1);
+        var toRemove = Set<Int>();
+        toRemove.insert(1);
+        value.removeValues(toRemove);
         XCTAssert(!value.containsValue(1));
     }
 }
