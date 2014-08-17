@@ -8,11 +8,16 @@
 
 import Foundation
 
-// A value represents the contents of a board location. Its value can be fixed, unknown, or constrained to a list of possible values.
+/**
+ * This class represents the contents of a board location. Its value is constrained to a list of possible values.
+ * If there's only one possible value than its value is fixed.
+ */
 public class Value : SequenceType {
     var values = Set<Int>();
     
-    // Create a non-fixed value that contains all numbers in range 1 to size, inclusive.
+    /**
+     * An initial Value is unconstrained and contains all numbers in range 1 to size, inclusive.
+     */
     public init(size:Int) {
         for i in 1...size {
             values.insert(i);
@@ -46,7 +51,7 @@ public class Value : SequenceType {
         values.insert(value);
     }
 
-    // Restrict this value's possible values based on the input constraints.
+    /** Restrict this value's possible values based on the input constraints. */
     public func constrainTo(constraints:Value) {
         values.intersect(constraints.values);
     }

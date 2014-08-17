@@ -8,7 +8,7 @@
 
 import Foundation
 
-//  Basic Set type
+/** Basic Set type */
 public struct Set<T: Hashable> : SequenceType {
     var contents = [T: Bool]();
     
@@ -56,7 +56,7 @@ public struct Set<T: Hashable> : SequenceType {
         print("]");
     }
     
-    // Modify this set to be an intersection of the current set's contents with the other set.
+    /** Modify this set to be an intersection of the current set's contents with the other set. */
     public mutating func intersect(other:Set<T>) {
         for value in self {
             if !other.contains(value) {

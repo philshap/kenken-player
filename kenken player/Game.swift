@@ -8,8 +8,10 @@
 
 import Foundation
 
-// A Game is a Board and a set of Constraints. A game is played by running constraints to remove invalid values. Once
-// all invalid values are removed, the board values will be fixed and the game is complete.
+/**
+ * A Game is a Board and a set of Constraints. A game is played by running constraints to remove invalid values. Once
+ * all invalid values are removed, the board values will be fixed and the game is complete.
+ */
 public struct Game {
     var board: Board;
     var constraints: [Constraint];

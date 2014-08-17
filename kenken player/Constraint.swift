@@ -8,27 +8,30 @@
 
 import Foundation
 
-// A constraint constists of an operator, a series of board positions and a goal value. A constraint is satisfied if the
-// goal value can be produced by applying the operator to the board contents.
+/**
+ * A constraint constists of an operator, a set of board positions and a goal value. A constraint is satisfied if the
+ * goal value can be produced by applying the operator to the board contents at the specified positions.
+ */
 public class Constraint {
     let op:Operator;
     let goal:Int;
     let positions:[Position];
     
-    // Initialize the board values corresponding to this constraint. The initial constraint includes
-    // all values that are valid for this operator.
+    /**
+     * Create a constraint, given an operator, goal and board positions.
+     */
     public init(_ op:Operator, _ goal:Int, _ positions:[Position]) {
         self.op = op;
         self.goal = goal;
         self.positions = positions;
     }
     
-    // Need to exclude identical values if they share the same row or column.
+    /** Exclude identical values if they share the same row or column. */
     public func excludeValue(position1: Position, _ value1:Int, _ position2: Position, _ value2:Int) -> Bool {
         return (value1 == value2) && (position1.row == position2.row || position1.column == position2.column);
     }
     
-    // Need to exclude identical values if they share the same row or column.
+    /** Exclude identical values if they share the same row or column. */
     public func excludeValue(position1: Position, _ value1: Int,
                            _ position2: Position, _ value2 : Int,
                            _ position3: Position, _ value3: Int) -> Bool {
@@ -37,7 +40,6 @@ public class Constraint {
             || excludeValue(position2, value2, position3, value3);
     }
 
-    // Modify the board values to satisfy this constraint.
     // Here is how this works:
     // The inputs are the current possible values for the board positions.
     // For each position, create an empty set to contain the allowed values.
@@ -45,6 +47,7 @@ public class Constraint {
     // to the allowed set of values.
     // Once all combinations have been tested, set each positions' value to be the intersection of the current value with
     // the allowed values.
+    /** Modify the board values to satisfy this constraint. */
     public func constrain(board:Board) {
         var allowed = [Value]();
         for _ in positions {
