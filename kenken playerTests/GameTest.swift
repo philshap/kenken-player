@@ -78,7 +78,7 @@ class GameTest: XCTestCase {
             Constraint("+ 18 61 52 62"),
             Constraint("- 5 12 13"),
             Constraint("- 3 22 32"),
-            Constraint("- 3 42"),
+            Constraint("= 3 42"),
             Constraint("= 6 03"),
             Constraint("+ 7 23 33"),
             Constraint("+ 13 43 53 63"),
@@ -96,10 +96,14 @@ class GameTest: XCTestCase {
     
     func testGameBig() {
         // Solver not yet smart enough to handle this.
-//        var game = createTestGame3();
-//        while !game.isComplete() {
-//            game.solve();
-//            game.display();
-//        }
+        var game = createTestGame3();
+        var count = 0;
+        while !game.isComplete() {
+            game.solve();
+            game.display();
+            if count++ > 10 {
+                XCTFail("Can't solve!");
+            }
+        }
     }
 }
