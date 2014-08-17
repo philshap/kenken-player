@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0603A8199FB9D000029882 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0603A7199FB9D000029882 /* Game.swift */; };
+		4A0603AC199FD87000029882 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0603AB199FD87000029882 /* Position.swift */; };
+		4A0603AE199FEF2300029882 /* BoardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0603AD199FEF2300029882 /* BoardTest.swift */; };
+		4A0603B0199FF67E00029882 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0603AF199FF67E00029882 /* Operator.swift */; };
+		4A0603B2199FF8F200029882 /* GameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0603B1199FF8F200029882 /* GameTest.swift */; };
 		4A5D3BAD199F95C3006D6924 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BAC199F95C3006D6924 /* main.swift */; };
 		4A5D3BAF199F95C3006D6924 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BAE199F95C3006D6924 /* Document.swift */; };
 		4A5D3BB2199F95C3006D6924 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D3BB0199F95C3006D6924 /* Document.xib */; };
@@ -14,6 +19,13 @@
 		4A5D3BB7199F95C3006D6924 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D3BB6199F95C3006D6924 /* Images.xcassets */; };
 		4A5D3BBA199F95C3006D6924 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D3BB8199F95C3006D6924 /* MainMenu.xib */; };
 		4A5D3BC6199F95C3006D6924 /* kenken_playerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BC5199F95C3006D6924 /* kenken_playerTests.swift */; };
+		4A5D3BD1199F969E006D6924 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BD0199F969E006D6924 /* Constraint.swift */; };
+		4A5D3BD3199F9731006D6924 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BD2199F9731006D6924 /* Board.swift */; };
+		4A5D3BD5199F979E006D6924 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BD4199F979E006D6924 /* Value.swift */; };
+		4A5D3BD7199F9C41006D6924 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BD6199F9C41006D6924 /* Set.swift */; };
+		4A5D3BDC199FA24C006D6924 /* SetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BDB199FA24C006D6924 /* SetTest.swift */; };
+		4AF92DFA199FB2D8006893C0 /* ValueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF92DF9199FB2D8006893C0 /* ValueTest.swift */; };
+		4AF92DFC199FB64F006893C0 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF92DFB199FB64F006893C0 /* Matrix.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A0603A7199FB9D000029882 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		4A0603AB199FD87000029882 /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		4A0603AD199FEF2300029882 /* BoardTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoardTest.swift; path = "../kenken player/BoardTest.swift"; sourceTree = "<group>"; };
+		4A0603AF199FF67E00029882 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		4A0603B1199FF8F200029882 /* GameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTest.swift; sourceTree = "<group>"; };
 		4A5D3BA7199F95C3006D6924 /* kenken player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kenken player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5D3BAB199F95C3006D6924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A5D3BAC199F95C3006D6924 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -38,6 +55,13 @@
 		4A5D3BBF199F95C3006D6924 /* kenken playerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "kenken playerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5D3BC4199F95C3006D6924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A5D3BC5199F95C3006D6924 /* kenken_playerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kenken_playerTests.swift; sourceTree = "<group>"; };
+		4A5D3BD0199F969E006D6924 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		4A5D3BD2199F9731006D6924 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		4A5D3BD4199F979E006D6924 /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		4A5D3BD6199F9C41006D6924 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		4A5D3BDB199FA24C006D6924 /* SetTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTest.swift; path = "../kenken player/SetTest.swift"; sourceTree = "<group>"; };
+		4AF92DF9199FB2D8006893C0 /* ValueTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueTest.swift; path = "../kenken player/ValueTest.swift"; sourceTree = "<group>"; };
+		4AF92DFB199FB64F006893C0 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +103,7 @@
 		4A5D3BA9199F95C3006D6924 /* kenken player */ = {
 			isa = PBXGroup;
 			children = (
+				4A5D3BCF199F9669006D6924 /* board */,
 				4A5D3BAE199F95C3006D6924 /* Document.swift */,
 				4A5D3BB0199F95C3006D6924 /* Document.xib */,
 				4A5D3BB6199F95C3006D6924 /* Images.xcassets */,
@@ -101,6 +126,10 @@
 		4A5D3BC2199F95C3006D6924 /* kenken playerTests */ = {
 			isa = PBXGroup;
 			children = (
+				4A0603B1199FF8F200029882 /* GameTest.swift */,
+				4A5D3BDB199FA24C006D6924 /* SetTest.swift */,
+				4AF92DF9199FB2D8006893C0 /* ValueTest.swift */,
+				4A0603AD199FEF2300029882 /* BoardTest.swift */,
 				4A5D3BC5199F95C3006D6924 /* kenken_playerTests.swift */,
 				4A5D3BC3199F95C3006D6924 /* Supporting Files */,
 			);
@@ -113,6 +142,21 @@
 				4A5D3BC4199F95C3006D6924 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A5D3BCF199F9669006D6924 /* board */ = {
+			isa = PBXGroup;
+			children = (
+				4A5D3BD0199F969E006D6924 /* Constraint.swift */,
+				4A5D3BD2199F9731006D6924 /* Board.swift */,
+				4A5D3BD4199F979E006D6924 /* Value.swift */,
+				4A5D3BD6199F9C41006D6924 /* Set.swift */,
+				4AF92DFB199FB64F006893C0 /* Matrix.swift */,
+				4A0603A7199FB9D000029882 /* Game.swift */,
+				4A0603AB199FD87000029882 /* Position.swift */,
+				4A0603AF199FF67E00029882 /* Operator.swift */,
+			);
+			name = board;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +259,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A0603AC199FD87000029882 /* Position.swift in Sources */,
+				4A0603B0199FF67E00029882 /* Operator.swift in Sources */,
+				4A5D3BD1199F969E006D6924 /* Constraint.swift in Sources */,
+				4A0603A8199FB9D000029882 /* Game.swift in Sources */,
 				4A5D3BB5199F95C3006D6924 /* Document.xcdatamodeld in Sources */,
+				4A5D3BD3199F9731006D6924 /* Board.swift in Sources */,
+				4A5D3BD7199F9C41006D6924 /* Set.swift in Sources */,
+				4AF92DFC199FB64F006893C0 /* Matrix.swift in Sources */,
 				4A5D3BAF199F95C3006D6924 /* Document.swift in Sources */,
 				4A5D3BAD199F95C3006D6924 /* main.swift in Sources */,
+				4A5D3BD5199F979E006D6924 /* Value.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF92DFA199FB2D8006893C0 /* ValueTest.swift in Sources */,
+				4A5D3BDC199FA24C006D6924 /* SetTest.swift in Sources */,
+				4A0603B2199FF8F200029882 /* GameTest.swift in Sources */,
+				4A0603AE199FEF2300029882 /* BoardTest.swift in Sources */,
 				4A5D3BC6199F95C3006D6924 /* kenken_playerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +469,7 @@
 				4A5D3BCB199F95C3006D6924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A5D3BCC199F95C3006D6924 /* Build configuration list for PBXNativeTarget "kenken playerTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +478,7 @@
 				4A5D3BCE199F95C3006D6924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
