@@ -33,11 +33,23 @@ public class Constraint {
     
     /** Exclude identical values if they share the same row or column. */
     public func excludeValue(position1: Position, _ value1: Int,
-                           _ position2: Position, _ value2 : Int,
-                           _ position3: Position, _ value3: Int) -> Bool {
-        return excludeValue(position1, value1, position2, value2)
-            || excludeValue(position1, value1, position3, value3)
-            || excludeValue(position2, value2, position3, value3);
+        _ position2: Position, _ value2 : Int,
+        _ position3: Position, _ value3: Int) -> Bool {
+            return excludeValue(position1, value1, position2, value2)
+                || excludeValue(position1, value1, position3, value3)
+                || excludeValue(position2, value2, position3, value3);
+    }
+    
+    public func excludeValue(position1: Position, _ value1: Int,
+        _ position2: Position, _ value2: Int,
+        _ position3: Position, _ value3: Int,
+        _ position4: Position, _ value4: Int) -> Bool {
+            return excludeValue(position1, value1, position2, value2)
+                || excludeValue(position1, value1, position3, value3)
+                || excludeValue(position1, value1, position4, value4)
+                || excludeValue(position2, value2, position3, value3)
+                || excludeValue(position2, value2, position4, value4)
+                || excludeValue(position3, value3, position4, value4);
     }
 
     // Here is how this works:
@@ -85,6 +97,27 @@ public class Constraint {
                                 allowed[0].addValue(value1);
                                 allowed[1].addValue(value2);
                                 allowed[2].addValue(value3);
+                            }
+                        }
+                    }
+                }
+            }
+        case 4:
+            let position1 = positions[0];
+            let position2 = positions[1];
+            let position3 = positions[2];
+            let position4 = positions[3];
+            for value1 in board.getValueAt(position1) {
+                for value2 in board.getValueAt(position2) {
+                    for value3 in board.getValueAt(position3) {
+                        for value4 in board.getValueAt(position4) {
+                            if !excludeValue(position1, value1, position2, value2, position3, value3, position4, value4) {
+                                if op.apply(value1, value2, value3, value4) == goal {
+                                    allowed[0].addValue(value1);
+                                    allowed[1].addValue(value2);
+                                    allowed[2].addValue(value3);
+                                    allowed[3].addValue(value4);
+                                }
                             }
                         }
                     }

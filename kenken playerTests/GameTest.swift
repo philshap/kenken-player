@@ -21,7 +21,7 @@ class GameTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-
+    
     func testGame() {
         var game = Game.createTestGame();
         game.display();
@@ -29,5 +29,13 @@ class GameTest: XCTestCase {
         game.applyConstraints();
         game.display();
         XCTAssert(game.isGameComplete());
+    }
+    
+    func testGameBig() {
+        var game = Game.createTestGame2();
+        game.display();
+        XCTAssert(!game.isGameComplete());
+        game.applyConstraints();
+        game.display();
     }
 }

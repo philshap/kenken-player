@@ -45,4 +45,15 @@ public enum Operator {
             return arg1 * arg2 * arg3;
         }
     }
+    
+    public func apply(arg1:Int, _ arg2:Int, _ arg3:Int, _ arg4:Int) -> Int? {
+        switch self {
+        case .Identity, .Minus, .Divide:
+            return nil;
+        case .Plus:
+            return arg1 + arg2 + arg3 + arg4;
+        case .Multiply:
+            return arg1 * arg2 * arg3 * arg4;
+        }
+    }
 }
