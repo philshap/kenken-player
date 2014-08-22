@@ -21,6 +21,11 @@ public struct Game {
         self.constraints = constraints;
     }
     
+    public init(size: Int, constraintStrings:[String]) {
+        board = Board(size);
+        self.constraints = constraintStrings.map({s in Constraint(s)});
+    }
+    
     public func solve() {
         applyConstraints();
         excludeConstrainedValues();
