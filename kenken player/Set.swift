@@ -40,12 +40,12 @@ public struct Set<T: Hashable> : SequenceType {
     
     public func generate() -> GeneratorOf<T> {
         var contentsGenerator = contents.generate();
-        return GeneratorOf<T>({ () -> T? in
+        return GeneratorOf<T> {
             if let (key, _) = contentsGenerator.next() {
                 return key;
             }
             return nil;
-        })
+        }
     }
 
     public func display() {
