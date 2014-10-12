@@ -12,7 +12,7 @@ import Foundation
  * This class represents the contents of a board location. Its value is constrained to a list of possible values.
  * If there's only one possible value than its value is fixed.
  */
-public class Value : SequenceType {
+public class Value : SequenceType, Printable {
     var values = Set<Int>();
     
     /**
@@ -61,8 +61,8 @@ public class Value : SequenceType {
         values.intersect(constraints.values);
     }
     
-    public func display() {
-        values.display();
+    public var description : String {
+        return values.description;
     }
 
     public func generate() -> GeneratorOf<Int> {

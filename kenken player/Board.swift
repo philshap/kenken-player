@@ -9,7 +9,7 @@
 import Foundation
 
 /** A Board is a matrix of Values. Each value can be fixed or variable. */
-public class Board {
+public class Board : Printable {
     var contents: Matrix<Value>;
     /** The size of the board accross one dimension. A board is a square area. */
     public let size: Int;
@@ -58,12 +58,14 @@ public class Board {
         return contents[position.row, position.column];
     }
     
-    public func display() {
+    public var description : String {
+        var s = ""
         for i in 0..<size {
             for j in 0..<size {
-                contents[i, j].display();
+                s += contents[i, j].description
             }
-            println();
+            s += "\n"
         }
+        return s
     }
 }

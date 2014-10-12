@@ -70,7 +70,7 @@ class SetTest: XCTestCase {
         set1.insert(1);
         set1.insert(2);
         set1.insert(3);
-        
+
         var set2 = Set<Int>();
         set2.insert(2);
         set2.insert(3);
@@ -82,6 +82,20 @@ class SetTest: XCTestCase {
         XCTAssert(set1.contains(2));
         XCTAssert(set1.contains(3));
         XCTAssert(!set1.contains(4));
+    }
+    
+    func testIntersect2() {
+        var set1 = Set<Int>();
+        for i in 1...4 {
+            set1.insert(i);
+        }
+        var set2 = Set<Int>();
+        set2.insert(3);
+        
+        set1.intersect(set2);
+        
+        XCTAssert(set1.size() == 1);
+        XCTAssert(set1.contains(3));
     }
     
     func testGenerate() {

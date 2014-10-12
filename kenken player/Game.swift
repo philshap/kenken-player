@@ -12,7 +12,7 @@ import Foundation
  * A Game is a Board and a set of Constraints. A game is played by running constraints to remove invalid values. Once
  * all invalid values are removed, the board values will be fixed and the game is complete.
  */
-public struct Game {
+public struct Game : Printable {
     var board: Board;
     let constraints: [Constraint];
     
@@ -93,8 +93,7 @@ public struct Game {
         return board.solved();
     }
     
-    public func display() {
-        println();
-        board.display();
+    public var description : String {
+        return "\n" + board.description
     }
 }

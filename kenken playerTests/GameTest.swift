@@ -58,7 +58,7 @@ class GameTest: XCTestCase {
         var count = 0;
         while !game.isComplete() {
             game.solve();
-            game.display();
+            print(game.description)
             if count++ > 5 {
                 XCTFail("Can't solve!")
             }
@@ -87,7 +87,7 @@ class GameTest: XCTestCase {
         var game = createTestGame2();
         while !game.isComplete() {
             game.solve();
-            game.display();
+            print(game.description)
         }
     }
     
@@ -126,7 +126,7 @@ class GameTest: XCTestCase {
         var count = 0;
         while !game.isComplete() {
             game.solve();
-            game.display();
+            print(game.description)
             if count++ > 10 {
                 break;
 //                XCTFail("Can't solve!");

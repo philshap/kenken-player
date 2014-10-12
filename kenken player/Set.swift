@@ -9,7 +9,7 @@
 import Foundation
 
 /** Basic Set type */
-public struct Set<T: Hashable> : SequenceType {
+public struct Set<T: Hashable> : SequenceType, Printable {
     var contents = [T: Bool]();
     
     public init() {
@@ -24,7 +24,7 @@ public struct Set<T: Hashable> : SequenceType {
     }
     
     public mutating func remove(value:T) {
-        contents[value] = nil;
+        contents.removeValueForKey(value)
     }
     
     public func size() -> Int {
@@ -48,20 +48,27 @@ public struct Set<T: Hashable> : SequenceType {
         }
     }
 
-    public func display() {
-        print("[");
+    public var description : String {
+        var s = "[";
         for value in self {
-            print("\(value) ");
+            s += "\(value) ";
         }
-        print("]");
+        s += "]";
+        return s;
     }
     
     /** Modify this set to be an intersection of the current set's contents with the other set. */
     public mutating func intersect(other:Set<T>) {
+        // Need to do this in two loops; modifying a Dictionary while looping over it
+        // generates a bad instruction error.
+        var keysToDelete = [T]()
         for value in self {
             if !other.contains(value) {
-                remove(value);
+                keysToDelete.append(value)
             }
+        }
+        for key in keysToDelete {
+            remove(key)
         }
     }
 }
