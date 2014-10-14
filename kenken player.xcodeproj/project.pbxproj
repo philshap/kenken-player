@@ -20,7 +20,6 @@
 		4A5D3BB5199F95C3006D6924 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BB3199F95C3006D6924 /* Document.xcdatamodeld */; };
 		4A5D3BB7199F95C3006D6924 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D3BB6199F95C3006D6924 /* Images.xcassets */; };
 		4A5D3BBA199F95C3006D6924 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D3BB8199F95C3006D6924 /* MainMenu.xib */; };
-		4A5D3BC6199F95C3006D6924 /* kenken_playerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BC5199F95C3006D6924 /* kenken_playerTests.swift */; };
 		4A5D3BD1199F969E006D6924 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BD0199F969E006D6924 /* Constraint.swift */; };
 		4A5D3BD3199F9731006D6924 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BD2199F9731006D6924 /* Board.swift */; };
 		4A5D3BD5199F979E006D6924 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D3BD4199F979E006D6924 /* Value.swift */; };
@@ -59,7 +58,6 @@
 		4A5D3BB9199F95C3006D6924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4A5D3BBF199F95C3006D6924 /* kenken playerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "kenken playerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5D3BC4199F95C3006D6924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A5D3BC5199F95C3006D6924 /* kenken_playerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kenken_playerTests.swift; sourceTree = "<group>"; };
 		4A5D3BD0199F969E006D6924 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		4A5D3BD2199F9731006D6924 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		4A5D3BD4199F979E006D6924 /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 				4A5D3BDB199FA24C006D6924 /* SetTest.swift */,
 				4AF92DF9199FB2D8006893C0 /* ValueTest.swift */,
 				4A0603AD199FEF2300029882 /* BoardTest.swift */,
-				4A5D3BC5199F95C3006D6924 /* kenken_playerTests.swift */,
 				4A5D3BC3199F95C3006D6924 /* Supporting Files */,
 			);
 			path = "kenken playerTests";
@@ -289,7 +286,6 @@
 				4A5D3BDC199FA24C006D6924 /* SetTest.swift in Sources */,
 				4A0603B2199FF8F200029882 /* GameTest.swift in Sources */,
 				4A0603AE199FEF2300029882 /* BoardTest.swift in Sources */,
-				4A5D3BC6199F95C3006D6924 /* kenken_playerTests.swift in Sources */,
 				4A101F9D19A076FB00B0B2C5 /* ConstraintTest.swift in Sources */,
 				4A101F9B19A0756300B0B2C5 /* OperatorTest.swift in Sources */,
 			);
