@@ -61,6 +61,7 @@ class GameTest: XCTestCase {
             print(game.description)
             if count++ > 5 {
                 XCTFail("Can't solve!")
+                break
             }
         }
     }
