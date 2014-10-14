@@ -11,6 +11,9 @@ import Foundation
 public enum Operator {
     case Identity, Plus, Minus, Multiply, Divide;
     
+    /**
+     * Convenience constructor, maps the text version of an op to its value.
+     */
     public static func fromString(op:String) -> Operator {
         switch op {
         case "=": return Identity;
@@ -21,54 +24,47 @@ public enum Operator {
         default: return Identity;
         }
     }
-   
-    public func apply(arg1:Int) -> Int? {
+    
+    /**
+     * Return the result of applying this op to a list of arguments. If the op fails or is
+     * not appropriate for the number of arguments, return nil.
+     */
+    public func apply(args: Int...) -> Int? {
         switch self {
         case .Identity:
-            return arg1;
-        default:
-            return nil;
-        }
-    }
-   
-    public func apply(arg1:Int, _ arg2:Int) -> Int? {
-        switch self {
-        case .Identity:
-            return nil;
-        case .Plus:
-            return arg1 + arg2;
+            if args.count == 1 {
+                return args[0]
+            }
+            return nil
         case .Minus:
-            return arg1 - arg2;
-        case .Multiply:
-            return arg1 * arg2;
+            if args.count == 2 {
+                return args[0] - args[1]
+            }
+            return nil
         case .Divide:
-            // Only support exact divides.
-            if arg1 % arg2 == 0 {
-                return arg1 / arg2;
+            if args.count == 2 && args[0] % args[1] == 0 {
+                // Only support exact divides.
+                return args[0] / args[1]
             }
             return nil;
-        }
-    }
-
-    public func apply(arg1:Int, _ arg2:Int, _ arg3:Int) -> Int? {
-        switch self {
-        case .Identity, .Minus, .Divide:
-            return nil;
         case .Plus:
-            return arg1 + arg2 + arg3;
+            if args.count < 2 {
+                return nil;
+            }
+            var total = 0
+            for arg in args {
+                total += arg
+            }
+            return total
         case .Multiply:
-            return arg1 * arg2 * arg3;
-        }
-    }
-    
-    public func apply(arg1:Int, _ arg2:Int, _ arg3:Int, _ arg4:Int) -> Int? {
-        switch self {
-        case .Identity, .Minus, .Divide:
-            return nil;
-        case .Plus:
-            return arg1 + arg2 + arg3 + arg4;
-        case .Multiply:
-            return arg1 * arg2 * arg3 * arg4;
+            if args.count < 2 {
+                return nil;
+            }
+            var sum = 1
+            for arg in args {
+                sum *= arg
+            }
+            return sum
         }
     }
 }
