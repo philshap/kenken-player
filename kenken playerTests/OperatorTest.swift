@@ -22,20 +22,21 @@ class OperatorTest: XCTestCase {
         super.tearDown()
     }
     
-    func apply1Test() {
+    func testApply1() {
         XCTAssertEqual(Operator.Identity.apply(100)!, 100);
         XCTAssertNil(Operator.Plus.apply(100));
     }
     
-    func apply2Test() {
+    func testApply2() {
         XCTAssertNil(Operator.Identity.apply(4, 2));
         XCTAssertEqual(Operator.Plus.apply(4, 2)!, 6);
         XCTAssertEqual(Operator.Minus.apply(4, 2)!, 2);
         XCTAssertEqual(Operator.Multiply.apply(4, 2)!, 8);
         XCTAssertEqual(Operator.Divide.apply(4, 2)!, 2);
+        XCTAssertNil(Operator.Divide.apply(4, 3));
     }
     
-    func apply3Test() {
+    func testApply3() {
         XCTAssertNil(Operator.Identity.apply(1, 2, 3));
         XCTAssertEqual(Operator.Plus.apply(1, 2, 3)!, 6);
         XCTAssertNil(Operator.Minus.apply(1, 2, 3));
